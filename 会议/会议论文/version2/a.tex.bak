@@ -1,0 +1,826 @@
+
+%% bare_conf.tex
+%% V1.4a
+%% 2014/09/17
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8a or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_conf_compsoc.tex,
+%%                    bare_jrnl_compsoc.tex, bare_jrnl_transmag.tex
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices and paper sizes can       ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/tex-archive/info/epslatex/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Do not use the stfloats baselinefloat ability as IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/dblfloatfix/
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/url/
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+%\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsthm}
+\usepackage{stfloats}
+\usepackage{amsmath}
+ \usepackage{setspace}
+ \usepackage{bm}
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Improved Spatially Coupled Multiuser Transmission via Constellation Rotation}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Min Jiang, Zhongwei Si}
+\IEEEauthorblockA{Key Laboratory of Universal Wireless Communications, Ministry of Education\\ Beijing University of Posts and Telecommunications, Beijing, China 100876\\
+Email: {Jmin, sizhongwei}@bupt.edu.cn}}
+
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3},
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+In this paper, we apply constellation rotation in spatially coupled multiuser transmission, where each data stream is modulated with constellation rotation, the coupling data is the linearly superposition of certain data streams with time offsets and iterative detecting and decoding is performed. We also seek out the optimal rotation angle set using the mutual information. Simulation results show that constellation rotation contributes to improve the system performance and reduce the complexity of the system. The system with the optimal rotation angle set performs significantly better than the others.
+\end{abstract}
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+% no \IEEEPARstart
+
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+With the growing demand of mobile communication, the fifth generation(5G) wireless communication faces many challenges including high spectral efficiency and massive connection. Therefore, conventional orthogonal multiple access(OMA) is inadequate to meet the demand and non-orthogonal multiple access(NOMA)\cite{1} catches numerous attractions for its resource allocation in time/frequnecy domain. In NOMA, data streams from different users are allowed to be superimposed which makes the system achieve higher spectral efficiency. NOMA modulation\cite{2}, power allocation and user scheduling\cite{3} are potential research directions to improve system performance.
+
+Spatial graph coupling is a method where a new graph is produced by connecting copies of a single graph with certain rules. The technique was first applied to construct conventional low-density parity-check(LDPC) codes\cite{4} which proved to reach similar threshold to the maximum a posteriori probability(MAP) decoding threshold of corresponding LDPC block codes\cite{5}. Recently, some applications of the method have been found in multiple access, where different users share the same resource block by superimposing different data streams with time offsets. In \cite{6}, it has been proved that the spatial coupling with enough width achieves the capacity of random multiple access channel. Spatial coupling is used in code-division multiple-access(CDMA) in \cite{7} which improves the performance of iterative multiuser detection. \cite{8} proposes a multiple access demodulation with lower complexity which obtains the same performance as the others.
+
+Spatially coupled transmission achieves a good performance in terms of high utilization in theory, but actually, the interference between different data streams of all users is difficult to distinguish with the help of channel coding. To solve this problem, constellation rotation is introduced. Constellation rotation contributes to increase the modulation diversity and is widely used to make further distinction when data is superimposed. \cite{9} combines constellation rotation with symbol mapping which increases the spectral efficiency. The multi-dimensional SCMA codebook design with constellation rotation proposed in \cite{10} achieves better performance.
+
+In this paper, we focus on applying constellation rotation in spatially coupled multiuser transmission. Each data stream is equal-power and independent, encoded by LDPC codes\cite{11} and transmitted via AWGN channel. During the modulation, different data streams of each user or all data streams of all users are modulated with constellation rotation. The spatial coupling is constructed by superimposing the data streams with time offsets. At the receiver, we employ iterative detection and decoding algorithm for data processing in which log likelihood ratios(LLRs) are exchanged between the detector and decoders for determined times. Furthermore, we search for the optimal angle set with the method of maximizing mutual information(MI). We draw the conclusion that the rotations contribute to the performance improvement using extrinsic information transfer(EXIT) charts and bit error rate(BER) curves.
+
+The rest of this paper is organized as follows: In the section \uppercase\expandafter{\romannumeral2}, system model of the spatially coupled multiuser transmission is introduced. We make elaborated theoretical analysis containing constellation rotation, constellation rotation applied in spatial coupling, rotation angles optimization and the iterative detection and decoding algorithm in Section \uppercase\expandafter{\romannumeral3}. The simulation results and analysis are represented in section \uppercase\expandafter{\romannumeral4} with the help of BER curves and EXIT curves. Finally, section \uppercase\expandafter{\romannumeral5} summarizes this paper.
+
+
+%\hfill mds
+
+%\hfill September 17, 2014
+
+%\subsection{Subsection Heading Here}
+%Subsection text here.
+
+
+%\subsubsection{Subsubsection Heading Here}
+%Subsubsection text here.
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively.
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+
+\section{SYSTEM MODEL}
+\begin{figure*}[ht]
+\setlength{\abovecaptionskip}{0.cm}
+\setlength{\belowcaptionskip}{-0.cm}
+  \centering{\includegraphics[scale=0.7]{1.pdf}}
+  \caption{System model of N user each with L streams.}\label{number_inner_iterations}
+    \vspace{-2em}
+\end{figure*}
+We consider a scheme where constellation rotation is applied in spatial coupling multiuser data transmission. The system model proposed in this paper is shown in Fig. 1. To simplify the description, we take ${\textbf{b}_{l,s}}$ as an example, which represents the $s$th data stream of user $l$, $l \in \left[ {1, \ldots ,L} \right],s \in \left[ {1, \ldots ,S} \right]$, $L$ and $S$ denote the number of user and data stream per user, respectively. At the transmitter, binary information sequence ${\textbf{b}_{l,s}} = {\left[ {{\textbf{b}^T}_{l,s,1},{\textbf{b}^T}_{l,s,2}, \ldots ,{\textbf{b}^T}_{l,s,P}} \right]^T}$ with $P$ packages are encoded by LDPC encoder with code rate $R = {K \mathord{\left/
+ {\vphantom {K N}} \right.
+ \kern-\nulldelimiterspace} N}$, where sequence ${\textbf{b}_{l,s,p}} = \left[ {{b_{l,s,p,1}},{b_{l,s,p,2}}, \ldots ,{b_{l,s,p,K}}} \right]$ and $p \in \left[ {1,2, \ldots ,P} \right]$. In the modulator, constellation rotation is adopted to modulate the encoded data stream ${{\textbf{c}}_{l,s}}$. The output of the modulator is denoted by sequence ${\textbf{x}_{l,s}} = {\left[ {{\textbf{x}^T}_{l,s,1},{\textbf{x}^T}_{l,s,2}, \ldots ,{\textbf{x}^T}_{l,s,P}} \right]^T}$, where ${\textbf{x}_{l,s,p}} = {\left[ {{x_{l,s,p,1}},{x_{l,s,p,2}}, \cdots ,{x_{l,s,p,N}}} \right]^T}$. Then each package of ${\textbf{x}_{l,s}}$ is replicated $M$ times and permuted with different interleavers, which produces signal ${{\hat {\textbf{x}}}_{l,s}}$ composed of $\left\{ {{{\hat {\textbf{x}}}^1}_{l,s,1}, \ldots ,{{\hat {\textbf{x}}}^M}_{l,s,1}, \ldots ,{{\hat {\textbf{x}}}^1}_{l,s,P}, \ldots ,{{\hat {\textbf{x}}}^M}_{l,s,P}} \right\}$. ${{\hat {\textbf{x}}}_{l,s}}$ is superimposed on other data streams to generate the signal $\textbf{s}$ when spatial coupling. We define the system described above as a $\left( {L,S} \right)$-multiuser spatial coupling structure with $P$ packages and $M$ replications of each package.
+
+\begin{figure}[h!]
+\setlength{\abovecaptionskip}{0.cm}
+\setlength{\belowcaptionskip}{-0.cm}
+  \centering{\includegraphics[scale=0.4]{2.pdf}}
+  \caption{Coupling of modulated data streams with time offset $T$ in a $\left( {2,2} \right)$-multiuser spatial coupling structure with $3$ replications of each package.}\label{number_inner_iterations}
+    \vspace{-1em}
+\end{figure}
+Without loss of generality, we consider $\left( {2,2} \right)$-multiuser spatial coupling structure. The spatial coupling procedure is represented in Fig. 2, where each row is a data stream of a user and the packages are transmitted one after another. The block ${{\hat {\textbf{x}}}^m}_{l,s,p}$ can be denoted as ${{\hat {\textbf{x}}}^m}_{l,s,p} = {\bm{\pi} ^m}_{l,s,p}{\textbf{x}_{l,s,p}}$, where ${\bm{\pi} ^m}_{l,s,p}$ is the corresponding interleaver. At time $t = 0$, two data streams of the first user start to transmit. The signal transmitted adds two data streams of one user each $N$ bit intervals in order until the number of user reaches the limit.
+\begin{equation}
+\resizebox{1\hsize}{!}{
+$H = \left[ {\begin{array}{*{20}{c}}
+{{\pi ^1}_{1,1,1}}& \cdots &{{\pi ^M}_{1,1,1}}&{ \cdots  \cdots }&{{\pi ^1}_{1,1,P}}& \cdots &{{\pi ^M}_{1,1,P}}&{}&{}&{}\\
+{{\pi ^1}_{1,2,1}}& \cdots &{{\pi ^M}_{1,2,1}}&{ \cdots  \cdots }&{{\pi ^1}_{1,2,P}}& \cdots &{{\pi ^M}_{1,2,P}}&{}&{}&{}\\
+ \vdots & \cdots & \vdots &{ \cdots  \cdots }& \vdots & \cdots &{{\pi ^M}_{1,S,P}}&{}&{}&{}\\
+{{\pi ^1}_{1,S,1}}& \cdots &{{\pi ^M}_{1,S,1}}&{ \cdots  \cdots }&{{\pi ^1}_{1,S,P}}& \cdots &{{\pi ^M}_{1,S,P}}&{}&{}&{}\\
+{}&{{\pi ^1}_{2,1,1}}& \cdots &{{\pi ^M}_{2,1,1}}&{ \cdots  \cdots }&{{\pi ^1}_{2,1,P}}& \cdots &{{\pi ^M}_{2,1,P}}&{}&{}\\
+{}&{{\pi ^1}_{2,2,1}}& \cdots &{{\pi ^M}_{2,2,1}}&{ \cdots  \cdots }&{{\pi ^1}_{2,2,P}}& \cdots &{{\pi ^M}_{2,2,P}}&{}&{}\\
+{}& \vdots & \cdots & \vdots &{ \cdots  \cdots }& \vdots & \cdots & \vdots &{}&{}\\
+{}&{{\pi ^1}_{2,S,1}}& \cdots &{{\pi ^M}_{2,S,1}}&{ \cdots  \cdots }&{{\pi ^1}_{2,S,P}}& \cdots &{{\pi ^M}_{2,S,P}}&{}&{}\\
+{}&{}& \ddots & \vdots & \cdots & \vdots & \cdots & \vdots &{}&{}\\
+{}&{}&{}&{{\pi ^1}_{L,1,1}}& \cdots &{{\pi ^M}_{L,1,1}}&{ \cdots  \cdots }&{{\pi ^1}_{L,1,P}}& \cdots &{{\pi ^M}_{L,1,P}}\\
+{}&{}&{}&{{\pi ^1}_{L,2,1}}& \cdots &{{\pi ^M}_{L,2,1}}&{ \cdots  \cdots }&{{\pi ^1}_{L,2,P}}& \cdots &{{\pi ^M}_{L,2,P}}\\
+{}&{}&{}& \vdots & \cdots & \vdots &{ \cdots  \cdots }& \vdots & \cdots & \vdots \\
+{}&{}&{}&{{\pi ^1}_{L,S,1}}& \cdots &{{\pi ^M}_{L,S,1}}&{ \cdots  \cdots }&{{\pi ^1}_{L,S,P}}& \cdots &{{\pi ^M}_{L,S,P}}
+\end{array}} \right]$
+}\label{1}
+\end{equation}
+
+We use spatial coupling matrix $H$ to achieve above procedure. The construction of $H$ is shown in (\ref{1}), where ${\bm{\pi} ^m}_{l,s,p}$ is the permutation matrix of $N  \times N $ unit matrix. Therefore, the signal $\textbf{s}$ can be described as $\textbf{s} = {H^T}\textbf{x}$, where $\textbf{x} = {\left[ {{\textbf{x}^T}_{1,1,1}, \cdots ,{\textbf{x}^T}_{1,1,P}, \cdots ,{\textbf{x}^T}_{L,S,1}, \cdots ,{\textbf{x}^T}_{L,S,P}} \right]^T}$.
+
+When the signal $\textbf{s}$ passes through the AWGN channel, channel output can be calculated by (\ref{2}), where $\lambda $ is the power normalization coefficient, $\textbf{n}$ is gaussian noise with zero mean and ${\sigma ^2}$ variance.
+\begin{equation}
+\textbf{y} = \lambda \textbf{s} + \textbf{n}\label{2}
+\end{equation}
+
+At the receiver, iterative detection and decoding based on message passing algorithm(MPA) is performed. Inner the detector and the decoder, the extrinsic messages are iteratively exchanged along edges between channel nodes and variable nodes. For the iteration between detector and decoder, which is also called outer iteration, the output of the detector is transmitted to the decoder, the output of the decoder is used as the input of the detector for next iteration. Note that each package of a data stream is encoded and decoded individually and the maximum number of the outer iteration is defined as ${I_{\max }}$.
+\section{PROPOSED SCHEME}
+\subsection{Constellation rotation}
+For each data stream, the principle of the constellation rotation we proposed is illustrated in Fig. 3, where the modulated signal is constructed by anticlockwise rotating the signal after BPSK code modulation with a certain angle $\theta $. Assuming $\textbf{x}{'_{l,s}}$
+\begin{figure}[h!]
+\setlength{\abovecaptionskip}{0.cm}
+\setlength{\belowcaptionskip}{-0.cm}
+  \centering{\includegraphics[scale=0.15]{3.pdf}}
+  \caption{The constellation rotation of each data stream.}\label{number_inner_iterations}
+    \vspace{-1em}
+\end{figure}
+denotes the BPSK modulation signal of ${\textbf{c}_{l,s}}$, $\textbf{x}{'_{l,s}} = {\left[ {\textbf{x}{'^T}_{l,s,1},\textbf{x}{'^T}_{l,s,2}, \cdots ,\textbf{x}{'^T}_{l,s,P}} \right]^T}$. Then $\textbf{x}{'_{l,s}}$ is rotated with angle ${\bm{\theta} _{l,s}}$, ${\bm{\theta} _{l,s}} \in \left[ {0,180} \right)$, ${\textbf{x}_{l,s}}$ can be described as
+\begin{equation}
+{\textbf{x}_{l,s}} = {e^{i{\bm{\theta} _{l,s}}}}\textbf{x}{'_{l,s}}\label{3}
+\end {equation}
+
+\subsection{Constellation rotation applied in spatially coupling}
+To our knowledge, there exists inevitable interference when different signals are superimposed in spatially coupled multiuser transmission. Therefore, we apply the constellation rotation to make a further distinction between the signals superimposed. We consider the scheme of distinction in a progressive way.
+First, we deal with the interference between different data streams of each user by rotating them with different angles, and there is no difference between users. It diversifies the constellation of the coupled signal $\textbf{s}$ and contributes to improving the performance of the system theoretically. However, there is still interference between different users. Then, we use different angles to modulate all different data streams, it expands the diversity at the cost of increasing the implementation complexity. Experimental results show that the increase in complexity is negligible when compared to the improvement of performance.
+\begin{figure}[h!]
+\setlength{\abovecaptionskip}{0.cm}
+\setlength{\belowcaptionskip}{-0.cm}
+  \centering{\includegraphics[scale=0.42]{4.pdf}}
+  \caption{The constellations of coupled signal $\textbf{s}$ in (2,2)-multiuser spatial coupling system. Rotation angle sets from left to right are $\left( {0,0,0,0} \right)$, $\left( {0,90,0,90} \right)$, $\left( {0,30,60,90} \right)$, respectively.}\label{number_inner_iterations}
+    \vspace{-1em}
+\end{figure}
+
+We take the system with 2 users and 2 data streams per user as observation, the constellations of $\textbf{s}$ with different rotation angle sets are shown in Fig. 4. As can be seen from the figure, the constellation of $\textbf{s}$ containing $16$ points when all data streams are modulated with different angles. There are constellation overlapping when different users use the same rotation rule, We also call this phenomenon constellation aliasing. Nonetheless, both of them obtain higher diversity in constellation compared with the system without constellation rotation.
+
+When considering constellation, we naturally come up with the minimum Euclidean distance which reflects the mutual interference between constellation points. The shorter the distance is, the greater the interference is. The minimum Euclidean distance decrease when the diversity of the constellation increase. Therefore, it is necessary to make a trade off between constellation aliasing and mutual interference and search for the optimal rotation angle set.
+\subsection{Rotation angles optimization}
+The optimization of rotation angles is equivalent to find certain angle set with maximum mutual information(MI) between the input $\textbf{s}$ and the output $\textbf{y}$. The maximum MI represents the maximum amount of information about $\textbf{s}$ that can be conveyed through the channel and is also called channel capacity. Assuming the constellation points set of $\textbf{s}$ is denoted by $\left\{ {{s_k}} \right\},\left( {k = 1,2, \cdots ,K} \right)$, ${s_k} = {a_k} + i{b_k}$, $y = u + iv$. The channel transition probability is given as
+\begin{equation}
+\begin{aligned}
+p(y|{s_k}) &= \int\int{\frac{1}{{\pi {N_0}}}{e^{ - \;\frac{{{{\left( {u - {a_k}} \right)}^2} + {{\left( {v - {b_k}} \right)}^2}}}{{{N_0}}}}}dudv} \\
+&= \int\int\frac{1}{{\pi {N_0}}}{e^{ - \;\frac{{{{\left| {y - {s_k}} \right|}^2}}}{{{N_0}}}}}dudv\label{4}
+\end{aligned}
+\end{equation}
+Where $N_0$ is the noise power spectral density. In order to facilitate the calculation, we assume that $N_0=1$. The computational formula of MI is derived as
+\begin{equation}
+\begin{aligned}
+I\left( {\textbf{s};\textbf{y}} \right) = \sum\limits_{k = 1}^K {p\left( {{s_k}} \right)} \int \int p\left( {y|{s_k}} \right)\log \frac{{p\left( {y|{s_k}} \right)}}{{\sum\nolimits_{k = 1}^K {p\left( {{s_k}} \right)p\left( {y|{s_k}} \right)} }}dudv\label{5}
+\end{aligned}
+\end{equation}
+The limit of integration above is $( - \infty , + \infty )$. As $s_k$ occurs with equal probability, we combine (\ref{4}) with (\ref{5}), and get that:
+\begin{equation}
+\begin{aligned}
+&I\left( {\textbf{s};\textbf{y}} \right) = \log K - \\
+&\frac{1}{K}\sum\limits_{k = 1}^K {\int\int\frac{1}{{\pi {N_0}}}{e^{ - \;\frac{{{{\left| {y - {s_k}} \right|}^2}}}{{{N_0}}}}}\log \sum\limits_{k' = 1}^K {{e^{ - \;\frac{{{{\left| {y - {s_n}} \right|}^2} + {{\left| {y - {s_k}} \right|}^2}}}{{{N_0}}}}}} dudv}\label{6}
+\end{aligned}
+\end{equation}
+
+In our scheme, we traverse all sets of rotation angle when the total number of data streams LS is determined and select the optimal rotation angles with the maximum MI.
+\subsection{Iterative detection and decoding}
+In this section, we put the process of iteration detection and decoding scheme in detail. During the detection, the log-likelihood ratios(LLRs) are used as the extrinsic information and passed between nodes given in Fig. 5.
+\begin{figure}[h!]
+\setlength{\abovecaptionskip}{0.cm}
+\setlength{\belowcaptionskip}{-0.cm}
+  \centering{\includegraphics[scale=0.8]{5.pdf}}
+  \caption{Factor graph representation of spatial coupling multiple access system, where circles represent variable nodes corresponding to the data blocks in Fig. 2, channel nodes are coupling data and denoted by squares.}\label{number_inner_iterations}
+    \vspace{-1em}
+\end{figure}
+The received message of one node along one edge is not allowed to update the message sent from the same edge. Let the edge between variable node ${\hat {x}_{l,s,p}}$ and channel node ${s_t}$ as observation. Set $\xi (l,s,p)\backslash t$ is the index collection of channel nodes connected with variable node ${\hat {x}_{l,s,p}}$ and set $\xi t\backslash (l,s,p)$ is the index collection of variable nodes connected with channel nodes ${s_t}$. Symbol ${l_{{{\hat {x}}_{l,s,p}} \to {s_t}}}$ and ${l_{{s_t} \to {{\hat {x}}_{l,s,p}}}}$ represent the message sent from ${\hat {x}_{l,s,p}}$ and ${s_t}$, respectively. We initialize ${l_{{{\hat {x}}_{l,s}} \to {s_t}}}$ as follows:
+\begin{equation}
+{l_{{{\hat x}_{l,s,p}} \to {s_t}}} = \log {\rm{ }}\frac{{p({{\hat x}_{l,s,p}} =  + {e^{i{\theta _{l,s}}}})}}{{p({{\hat x}_{l,s,p}} =  - {e^{i{\theta _{l,s}}}})}}\label{7}
+\end{equation}
+The message updated during iteration can be write as:
+\begin{equation}
+\begin{aligned}
+{l_{{{\hat {x}}_{l,s,p}} \to {s_t}}} = \sum\limits_{_{t' \in \xi (l,s,p)\backslash t}} {{l_{{s_{t'}} \to {{\hat {x}}_{l,s,p}}}}}\label{8}
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+{l_{{s_t} \to {{\hat {x}}_{l,s,p}}}}\;\;\;{\kern 1pt}  = \;\;\;{\kern 1pt} \log \frac{{p({{\hat {x}}_{l,s,p}} =  + {e^{i{\theta _{l,s}}}}|{s_t},{{{\bf{\hat {\textbf{x}}}}}^{[t]}}\backslash {{\hat {x}}_{l,s,p}})}}{{p({{\hat {x}}_{l,s,p}} =  - {e^{i{\theta _{l,s}}}}|{s_t},{{{\bf{\hat {\textbf{x}}}}}^{[t]}}\backslash {{\hat {x}}_{l,s,p}})}} \\
+= \log \frac{{p({s_t}|{{{\bf{\hat {\textbf{x}}}}}^{[t]}},{{\hat {x}}_{l,s,p}} =  + {e^{i{\theta _{l,s}}}})p({{{\bf{\hat {\textbf{x}}}}}^{[t]}}|{{\hat {x}}_{l,s,p}} =  + {e^{i{\theta _{l,s}}}})}}{{p({s_t}|{{{\bf{\hat {\textbf{x}}}}}^{[t]}},{{\hat {x}}_{l,s,p}} =  - {e^{i{\theta _{l,s}}}})p({{{\bf{\hat {\textbf{x}}}}}^{[t]}}|{{\hat {x}}_{l,s,p}} =  - {e^{i{\theta _{l,s}}}})}}\label{9}
+\end{aligned}
+\end{equation}
+Where ${{\bf{\hat {\textbf{x}}}}^{[t]}}$ denotes the set containing all signals superimposed on the coupled signal ${{s_t}}$. (\ref{9}) is derived by using Bayes' rule listed below
+\begin{equation}
+\begin{aligned}
+p(x|y) = \frac{{p(y|x)p(x)}}{{p(y)}}\propto p(y|x)p(x)\label{10}
+\end{aligned}
+\end{equation}
+The conditional probability density function(pdf) of the coupled signal ${{s_t}}$ and the set ${{{\bf{\hat {\textbf{x}}}}}^{[t]}}$ are given separately as:
+\begin{equation}
+p\left( {{s_t}|{{{\bf{\hat {\textbf{x}}}}}^{[t]}}} \right) = \frac{1}{{\sqrt {2\pi \sigma } }}\exp \left( { - {\mkern 1mu} \frac{1}{{2{\sigma ^2}}}{{\left\| {{s_t} - {{\bf{h}}^{[t]T}}{{{\bf{\hat {\textbf{x}}}}}^{[t]}}} \right\|}^2}} \right)\label{11}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+p\left( {{{{\bf{\hat {\textbf{x}}}}}^{[t]}}|{{\hat {x}}_{l,s,p}}} \right) = {\prod _{(l',s',p') \in \xi t\backslash (l,s,p)}}p({\hat {x}_{l',s',p'}})\label{12}
+\end{aligned}
+\end{equation}
+where ${\textbf{h}^{[t]}}$ is normalized coefficient vector of ${{\bf{\hat {\textbf{x}}}}^{[t]}}$,symbol $\left\| {} \right\|$ is modulus operation and a priori probability of ${\hat {x}_{l',s',p'}}$ is written as:
+\begin{equation}
+p({\hat {x}_{l',s',p'}}) = \exp \left( {\frac{{{{\hat {x}}_{l',s',p'}}}}{2}{l_{{{\hat {x}}_{l',s',p'}} \to {s_t}}}} \right)\label{13}
+\end{equation}
+\begin{figure*}[ht]
+\begin{equation}
+\begin{aligned}
+{l_{{s_t} \to {{\hat {x}}_{l,s,p}}}} = \mathop {{{\max }^ \star }}\limits_{\begin{array}{*{20}{c}}
+{\;\;\;\;\;\;{{{\bf{\hat {\textbf{x}}}}}^{[t]}}\;\;\;\;\;\;}\\
+{{{\hat {x}}_{l,s,p}} =  + {e^{i{\theta _{l,s}}}}}
+\end{array}} \left( {{\sum _{(l',s',p') \in \xi t\backslash (l,s,p)}}\frac{{{{\hat {x}}_{l,s,p}}}}{2}{l_{{{\hat {x}}_{l,s,p}} \to {s_t}}} - \frac{1}{{2{\sigma ^2}}}{{\left\| {{s_t} - {{\bf{\textbf{h}}}^{[t]T}}{{{\bf{\hat {\textbf{x}}}}}^{[t]}}} \right\|}^2}} \right) \\- \mathop {{{\max }^ \star }}\limits_{\begin{array}{*{20}{c}}
+{\;\;\;\;\;\;{{{\bf{\hat {\textbf{x}}}}}^{[t]}}\;\;\;\;\;\;}\\
+{{{\hat {x}}_{l,s,p}} =  - {e^{i{\theta _{l,s}}}}}
+\end{array}} \left( {{\sum _{(l',s',p') \in \xi t\backslash (l,s,p)}}\frac{{{{\hat x}_{l,s,p}}}}{2}{l_{{{\hat {x}}_{l,s,p}} \to {s_t}}} - \frac{1}{{2{\sigma ^2}}}{{\left\| {{s_t} - {{\bf{\textbf{h}}}^{[t]T}}{{{\bf{\hat {\textbf{x}}}}}^{[t]}}} \right\|}^2}} \right)\label{14}
+\end{aligned}
+\end{equation}
+\end{figure*}
+Substituting (\ref{11}), (\ref{12}) and (\ref{13}) into (\ref{9}), we get (\ref{14}) shown on the top of next page, where ${\mathop {\max }\nolimits^* }$ operation\cite{12} is defined as follows:
+\begin{equation}
+\begin{aligned}
+\mathop {\max }\nolimits^* (a,b) &= \log (\exp (a) + \exp (b)) \\&= \max(a,b) + \log(1 + \exp ( - \left| {a - b} \right|))\label{15}
+\end{aligned}
+\end{equation}
+
+We define the iterative process from the detector to the decoder as a whole iteration. The message exchanged between detector and decoder can be described as
+\begin{equation}
+\begin{aligned}
+l_{out,{{\hat {x}}_{l,s,p}}}^{DEC[i]} = l_{{{\hat {x}}_{l,s,p}}}^{{I_{DEC}}} - l_{out,{{\hat {x}}_{l,s,p}}}^{DET[i]}\label{16}
+\end{aligned}
+\end{equation}
+where the symbol on the left of the equal sign represents the output of the decoder in $i$th iteration, $i \in \left[ {1, \cdots {I_{\max }}} \right]$. On the right side, the subtrahend is the LLRs of the decoder after ${{I_{DEC}}}$ inner iterations and is used for soft decision, the minuend denotes the output of the detector in $i$th iteration, initialized to $0$ when $i=1$ and is updated as:
+\begin{equation}
+\begin{aligned}
+l_{out,{{\hat {x}}_{l,s,p}}}^{DET[i]} = l_{{{\hat {x}}_{l,s,p}}}^{{I_{DET}}} - l_{out,{{\hat {x}}_{l,s,p}}}^{DEC[i - 1]}\label{17}
+\end{aligned}
+\end{equation}
+where $l_{{{\hat {x}}_{l,s,p}}}^{{I_{DET}}}$ is the total LLRs received from neighbors of ${{{\hat {x}}_{l,s,p}}}$ after ${{I_{DET}}}$ iterations. The symbol $l_{out,{{\hat {x}}_{l,s,p}}}^{DEC[i - 1]}$ is the ${i - 1}$th iterative output of the detector.
+
+\section{SIMULATION RESULTS}
+In this section, we analyze the system performance using EXIT charts and BER curves. The system settings are as follows: the encoding scheme considered is $(3,6)$-regular LDPC code with length $N=1800$ and rate ${1 \mathord{\left/
+ {\vphantom {1 2}} \right.
+ \kern-\nulldelimiterspace} 2}$, the channel noise is complex AWGN with zero mean and ${{{\sigma ^2}} \mathord{\left/
+ {\vphantom {{{\sigma ^2}} 2}} \right.
+ \kern-\nulldelimiterspace} 2}$ variance for each dimension, and the maximum numbers of iterations inner detector, inner decoder and between the detector and the decoder are $2$, $10$ and $20$, respectively.
+\subsection{EXIT chart}
+EXIT chart is a useful tool to track the mutual information at each iteration in soft-in soft-out(SISO) system, and it provides an excellent prediction on the behavior of the iteration. We use EXIT charts to evaluate the performance of the detector(or decoders) by observing whether it is conductive to increase the output mutual information ${I_E}$ when the input extrinsic information ${I_A}$ is given. We produce the EXIT curve with several input mutual information and the corresponding output of the detector(or decoders).
+\begin{figure}[h!]
+\setlength{\abovecaptionskip}{0.cm}
+\setlength{\belowcaptionskip}{-0.cm}
+  \centering{\includegraphics[scale=0.34]{6.pdf}}
+  \caption{The EXIT chart of the detector for different rotation angle group in $\left( {2,2} \right)$-multiuser spatial coupling system with SNR = 0.5dB.}\label{number_inner_iterations}
+    \vspace{-1em}
+\end{figure}
+\begin{figure}[h!]
+\setlength{\abovecaptionskip}{0.cm}
+\setlength{\belowcaptionskip}{-0.cm}
+  \centering{\includegraphics[scale=0.34]{7.pdf}}
+  \caption{The EXIT chart of the detector for different rotation angle group in $\left( {2,2} \right)$-multiuser spatial coupling system with SNR = 4dB.}\label{number_inner_iterations}
+    \vspace{-0.5em}
+\end{figure}
+
+For the sake of generality, we take (2,2)-multiuser spatial coupling structure as an instance. There are two EXIT curves of detector with different rotation angle set over AWGN channel at SNR = 0.5dB shown in Fig. 6 and SNR = 4dB shown in Fig. 7, respectively. According to the figures above, we reach a conclusion that constellation rotation does contribute to increase the output mutual information of the detector. The system performance is influenced by the rotation angle set, when we only consider the interference between two data streams of each user, the optimal rotation angle set is $(0,90,0,90)$, namely, two data streams of a user are perpendicular to each other, which means there exists no interference between certain user's different data streams, but the interference between the two users can not be eliminated and results in the constellation aliasing. When all data streams are taken into account, the diversity of constellation increases. In this case, the optimal rotation angle set we seek out are $(0,90,45,135)$. It can be seen that when the SNR is low at $0.5dB$, the performance of the detector for $(0,90,45,135)$ is almost the same as that for $(0,90,0,90)$, that is to say interference plays a dominant role in the factors affecting the performance rather than diversity. On the contrary, when the SNR is high at $4dB$, the performance of detector is better for $(0,90,45,135)$, which means diversity is the main influencing factor. Anyway, both of them perform better than the system with rotation angle sets randomly selected, such as $(0,30,60,90)$.
+\subsection{BER curve}
+We have demonstrated that the constellation rotation is applicable to any spatially coupled multiuser transmission structure. In this subsection, we only take the (2,2) and (3,2)-multiuser spatial coupling structure as observations for simplified analysis, the optimal rotation angle sets we obtain are $(0,90,45,135)$ and $(0,90,30,120,60,150)$.
+
+\begin{figure}[h!]
+\setlength{\abovecaptionskip}{0.cm}
+\setlength{\belowcaptionskip}{-0.cm}
+  \centering{\includegraphics[scale=0.5]{8.pdf}}
+  \caption{The average BER curves of different multiuser spatial coupling systems with different rotation angle sets.}\label{number_inner_iterations}
+    \vspace{-1em}
+\end{figure}
+We illustrate the average BER curve of the system in Fig. 8, where dotted line and solid line represent the system with the structure $\left( {2,2} \right)$ and the structure $\left( {3,2} \right)$, respectively. It can be observed that the system with constellation rotation improves its performance indeed and the optimal rotation angle sets we find out outperform the others in terms of BER performance, which is consistent with the analysis of EXIT charts above. And the performance of the system with constellation rotation converges faster, which is beneficial to reduce the implementation complexity and latency of the system.
+
+\section*{CONCLUSION}
+In this paper, we have applied constellation rotation in spatially coupled multiuser transmission with LDPC coding and iterative detection and decoding algorithm, and sought out the optimal rotation angle set using mutual information. The EXIT charts and BER curve simulation results verify that the constellation rotation benefits to improve the performance of the system and reduce the implementation complexity and latency, the system with the optimal rotation angle set performs significantly better than the others.
+% use section* for acknowledgment
+%\section*{Acknowledgment}
+
+
+%The authors would like to thank...
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{100}
+
+\bibitem{1}
+L. Dai, B. Wang, Y. Yuan, S. Han, C. I and Z. Wang, ``Non-orthogonal multiple access for 5G: solutions, challenges, opportunities, and future research trends," in IEEE Communications Magazine, vol.53, no. 9, pp. 74-81, Sep. 2015.
+\bibitem{2}
+C. Yan, A. Harada, A. Benjebbour, Y. Lan, A. Li and H. Jiang, ``Receiver
+design for downlink non-orthogonal multiple access (NOMA)," IEEE VTC Spring 2015, May 2015.
+\bibitem{3}
+M. -R. Hojeij, J. Farah, C. A. Nour and C. Douillard, ``Resource allocation in downlink non-orthogonal multiple access (NOMA) for future radio access," IEEE VTC Spring 2015, May 2015.
+\bibitem{4}
+D. Truhachev, M. Lentmaier, and K. S. Zigangirov, "Mathematical analysis of iterative decoding of ldpc convolutional codes," in Proccedings of the 2001 IEEE International Symposium on Information Theory, Washington, USA, June 2001.
+
+\bibitem{5}
+M. Lentmaier, A. Sridharan, D. J. Costello, and K. S. Zigangirov, ``Iterative decoding threshold analysis for LDPC convolutional codes," IEEE Trans. Inform. Theory, vol. 56, pp. 5274每5289, Oct. 2010.
+
+\bibitem{6}
+C. Schlegel and D. Truhachev, ``Multiple access demodulation in the lifted signal graph with spatial coupling,§tit, vol. 59, no. 4, pp. 2459每2470, 2013.
+
+\bibitem{7}
+K. Takeuchi, T. Tanaka, and T. Kawabata, ``Performance Improvement of Iterative Multiuser Detection for Large Sparsely Spread CDMA Systems by Spatial Coupling," IEEE Trans. Inf. Theory, vol. 61, no. 4, pp. 1768-1794, Apr. 2015.
+
+\bibitem{8}
+C. Schlegel and D. Truhachev, ``Multiple access demodulation in the lifted signal graph with spatial coupling," IEEE Trans. Inf. Theory, vol. 59, no. 4, pp. 2459每2470, Apr. 2013.
+
+\bibitem{9}
+S. S. Dash, F. Pythoud, B. Baeuerle, A. Josten, P. Leuchtmann, D. Hillerkuss and J. Leuthold, ``Approaching the Shannon Limit Through Constellation Modulation," in Optical Fiber Communications Conference and Exhibition (OFC), Anaheim, USA, 2016.
+
+%8Approaching the Shannon Limit Through Constellation Modulation
+%9Multi-dimensional SCMA Codebook Design Based on Constellation Rotation and Interleaving
+\bibitem{10}
+D. Cai, P. Fan, X. Lei, Y. Liu, and D. Chen, ``Multi-dimensional SCMA codebook  design  based  on  constellation  rotation  and  interleaving," in Proc. IEEE 83rd Veh. Technol. Conf. (VTC Spring), May 2016, pp. 1每5.
+\bibitem{11}
+R. G. Gallager, ``Low-density parity-check codes," IRE Trans. Inform. Theory, vol. IT-8, pp. 21每28, Jan. 1962.
+\bibitem{12}
+R. Hoshyar, F.Wathan, and R. Tafazolli, ``Novel low-density signature for synchronous CDMA systems over AWGN channel," IEEE Trans. Signal Process., vol.
+56, no. 4, pp. 1616C1626, Apr. 2008.
+\end{thebibliography}
+
+
+
+
+% that's all folks
+\end{document}
+
+
